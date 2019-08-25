@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block title %}Lung Cancer Prediction{% endblock %}
+
+{% block content %}
+<form method="post" action="./process_form">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="notification">
+        Welcome to my lung health tool! Enter your information below, and using a machine learning model,
+        we will predict your risk assessment.
+      </div>
+
+      <div class="columns is-mobile">
+        <div class="column">
+          <div class="field">
+            <label class="label">Age</label>
+            <div class="control">
+              <input class="input" name="age" type="number" min="0", max="140" placeholder="Enter age" value="{{ form_values['age'] }}" required>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">How many cigarettes per week?</label>
+            <div class="field has-addons">
+              <div class="control is-expanded">
+                <input class="input" type="number" name="smoke" min="0" max="50" placeholder="smoke" value="{{ form_values['smoke'] }}" required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-mobile">
+        <div class="column">
+          <div class="field">
+            <label class="label">How many times do you drink alcohol per week?</label>
+            <div class="control">
+              <input class="input" name="alco" type="number" min="0" , max="50" placeholder="alco" value="{{ form_values['alco'] }}" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <input type="submit" class="button is-link">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+{% endblock %}
