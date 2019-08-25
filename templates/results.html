@@ -4,15 +4,35 @@
 
 {% block content %}
 <div class="results">
-  <div class="results-main">
-    <div class="results-icon">
-      <i class="fas fa-stethoscope"></i>
+  {% if prediction == 1 %}
+    <!-- Increased Risk Detected (> 50% probability) -->
+    <div class="results-main">
+      <div class="results-icon">
+        <i class="fas fa-stethoscope"></i>
+      </div>
+      <div class="results-pct">
+        {{ (probabilities[1] * 100) | round | int }}%
+      </div>
     </div>
-    <div class="results-pct">
-      {{ (probabilities[1] * 100) | round | int }}%
+    <div class="results-text notification is-danger">
+      Increased risk detected.
+      Please speak to your doctor at your next visit.
     </div>
-  </div>
-
+  {% else %}
+    <!-- Low Risk -->
+    <div class="results-main">
+      <div class="results-icon">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="results-pct">
+        {{ (probabilities[1] * 100) | round | int }}%
+      </div>
+    </div>
+    <div class="results-text notification is-success">
+      Looking good! You are at low risk of lung cancer.
+    </div>
+  {% endif %}
+  
   <div class="back-button container has-text-centered">
     <a class="button is-small is-text" href=".{{ url_for('.form', **form_values) }}">
       <span class="icon">
