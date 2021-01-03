@@ -3,8 +3,9 @@ A flask web app that predicts the user’s risk of lung cancer. Takes 3 metrics 
 
 *Note that this app is intended to purely be an introduction to machine learning and flask, and thus does NOT constitute medical advice to any degree.*
 
-# Running on Heroku: Deploy
+# Hosted on Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Hosted on the free tier of Heroku; the app sleeps if it receives no web traffic in a 30-minute period. Therefore, please allow a couple seconds for the demo below to load 😃
+
 [Live demo](https://lung-cancer-predictor.herokuapp.com/)
