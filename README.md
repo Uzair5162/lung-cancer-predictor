@@ -1,5 +1,6 @@
 # Lung Cancer Predictor App
-A flask web app that predicts the user’s risk of lung cancer. Takes 3 metrics as inputs and implements the Random Forest machine learning model with a Kaggle dataset. Dataset was prepared and used with a 70:30 train test split. 
+A flask web app that predicts the user’s risk of lung cancer. Takes 3 metrics as inputs and implements the Random Forest machine learning model with a Kaggle dataset. Dataset was prepared and used with a 70:30 train test split.
+
 *Note that this app is intended to purely be an introduction to machine learning and flask, and thus does NOT constitute medical advice to any degree.*
 
 # Running on Heroku: Deploy
